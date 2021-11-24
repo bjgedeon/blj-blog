@@ -36,8 +36,8 @@ $stmt->fetchAll()
     <main class = "aside">
     <h2>Blogger</h2>
     <p>Name</p>
-    <p>Erstelldatum</p>
-    <p>Beitrag</p>
+    <p>Erstelldatum: </p>
+    <p>Beitrag: </p>
     </main>
  
 </body>
