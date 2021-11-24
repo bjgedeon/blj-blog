@@ -1,0 +1,56 @@
+.title {
+    padding: 40px;
+    background: lightblue;
+    font-family: 'Outfit', sans-serif;
+    font-size: 100px;
+}
+
+.aside {
+    padding: 10px;
+    background: lightgray;
+    border-top: black solid 2px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 400px auto 800px;
+    grid-template: 
+    "header"
+    "aside"
+    "main";
+}
+
+.back {
+    background: turquoise;
+}
+ .beitrag {
+    font-family: 'Outfit', sans-serif;
+    border-top: black solid 2px;
+ }
+
+ .block {
+     display: block;
+     margin-top: 20px;
+     }
+
+     a:link {
+         text-decoration: none;
+     }
+
+     a:hover {
+         color:lightblue;
+     }
+
+     .formular {
+         margin-top: 20px;
+     }
+
+     .error {
+            border: 2px solid darkred;
+            border-radius: 5px;
+            background: lightcoral;
+     }
+
+  
