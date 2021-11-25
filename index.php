@@ -58,7 +58,7 @@ $blogs = $stmt->fetchALL();
 <header>
     <h1 class = "title">Blog</h1>
 </header>
-<form class = "formular" method="post" action="index.php">
+<form class = "aside" method="post" action="index.php">
 
 
      Benutzername: <input class = "formular" type = "text" name = "username"> <br>
@@ -72,19 +72,18 @@ $blogs = $stmt->fetchALL();
 <aside class = "aside">
 <a href = "andereblogs.php">andere Blogs</a>
     </aside>
-    <main class = "aside">
-    <h2>Blogger</h2>
-    <p>Benutzername:</p>
-    <p>Erstelldatum: </p>
-    <p>Beitrag: </p>
-    </main>
     <?php
 foreach($blogs as $blog)  { ?>
 
-<div>
-    <h2><?= htmlspecialchars($blog['post_title'])?></h2>
+<div class = "aside">
+<h2>Blogger</h2>
+<p>Benutzername:</p>
     <h2><?= htmlspecialchars($blog['created_by'])?></h2>
-    <h2><?= htmlspecialchars($blog['created_at'])?></h2>
+    <p>Erstelldatum:</p>
+    <p><?= htmlspecialchars($blog['created_at'])?></p>
+    <p>Titel:</p>
+    <h2><?= htmlspecialchars($blog['post_title'])?></h2>
+    <p>Beitrag:</p>
     <p><?= htmlspecialchars($blog['post_text'])?></p>
 </div>
 <?php

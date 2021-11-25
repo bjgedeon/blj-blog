@@ -15,11 +15,11 @@
 .grid {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 400px 200px auto;
+    grid-template-rows: 400px auto 600px auto;
     grid-template: 
     "header"
-    "aside"
     "form"
+    "aside"
     "main"
     "div";
 }
@@ -38,6 +38,7 @@
 
      a:link {
          text-decoration: none;
+         color: white;
      }
 
      a:hover {
