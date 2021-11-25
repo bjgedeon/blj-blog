@@ -1,5 +1,5 @@
 <?php
-$user = 'root';
+$user = 'root'; 
 $password = '';
 $database = 'blog';
 
@@ -9,10 +9,10 @@ $pdo = new PDO('mysql:host=localhost;dbname=' . $database, $user, $password, [
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 ]);
 
-$stmt = $pdo->prepare('SELECT * FROM `blog`');
-$stmt->fetchAll()
+$stmt = $pdo->prepare('SELECT * FROM `posts`');
+$stmt->fetchAll();
 
-date_default_timezone_set('Europe/Zürich');
+date_default_timezone_set('Europe/Zurich');
 $postDateTime = date("d.m.Y h:i", time());
 $errors = array();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -22,20 +22,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = 'Bitte geben Sie eien Benutzernamen ein';
     }
     if (!empty($_POST['post-text'])) {
-        $username = $_POST['post-text'];
+        $postText = $_POST['post-text'];
     } else {
         $errors[] = 'Geben Sie bitte einen Text ein';
     }
     if (!empty($_POST['post-title'])) {
-        $username = $_POST['post-title'];
+        $postTitle = $_POST['post-title'];
     } else {
         $errors[] = 'Geben Sie bitte einen Titel ein';
     }
     if (empty($errors)) {
         $stmt = $pdo->prepare("INSERT INTO `posts` (created_by, created_at, post_title, post_text) VALUES (:username, :postTime, :postTitle, :postText)");
-
+        $stmt -> execute(['username' => $username, 'postTime' => $postDateTime, 'postTitle' => $postTitle, 'postText' => $posttext]);
     }
 }
+
+
 
 ?>
 
@@ -56,17 +58,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <h1 class = "title">Beitrag</h1>
 </header>
 <aside class = "aside">
-    <a href = "index.php">Blog</a>
+<a href = "index.php">Blog</a>
+<a href = "andereblogs.php">andere Blogs</a>
 </aside>
+<form>
 <main class = "aside">
-<div>
 
-     Nutzername: <input class = "formular" type = "text" name = "name"> <br>
+     Benutzername: <input class = "formular" type = "text" name = "name"> <br>
      Titel: <input class = "formular" type = "text" name = "name">
+     Bild: <input class = "formular" type = "text" name = "name" placeholder="URL des Bildes">
     <textarea class = "block" name = "beitrag" rows = "5" cols = "40" placeholder="Schreiben Sie ihren Beitrag"></textarea> 
+    <input type = "submit">
 
-
-</div>
 </main>
+</form>
+
+<?php
+foreach($blogs as $blog)  { ?>
+
+<div>
+    <h2><?= htmlspecialchars($blog['post_title'])?></h2>
+    <h2><?= htmlspecialchars($blog['created_by'])?></h2>
+    <h2><?= htmlspecialchars($blog['created_at'])?></h2>
+    <p><?= htmlspecialchars($blog['post_text'])?></p>
+</div>
+<?php
+}
+?>
+
 </body>
 </html>

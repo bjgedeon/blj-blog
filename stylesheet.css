@@ -6,7 +6,7 @@
 }
 
 .aside {
-    padding: 10px;
+   padding: 10px;
     background: lightgray;
     border-top: black solid 2px;
     font-family: 'Outfit', sans-serif;
@@ -15,24 +15,24 @@
 .grid {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 400px auto 800px;
+    grid-template-rows: 400px 200px auto;
     grid-template: 
     "header"
     "aside"
-    "main";
+    "main"
+    "div";
 }
 
-.back {
-    background: turquoise;
-}
  .beitrag {
     font-family: 'Outfit', sans-serif;
     border-top: black solid 2px;
+   
  }
 
  .block {
      display: block;
      margin-top: 20px;
+     margin-bottom: 20px;
      }
 
      a:link {
@@ -52,5 +52,3 @@
             border-radius: 5px;
             background: lightcoral;
      }
-
-  

@@ -8,9 +8,15 @@ $pdo = new PDO('mysql:host=localhost;dbname=' . $database, $user, $password, [
     PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 ]);
+$stmt = $pdo->query('SELECT * FROM `posts`');
+$blogs = $stmt->fetchALL(); 
 
-$stmt = $pdo->prepare('SELECT * FROM `blog`');
-$stmt->fetchAll()
+session_start();
+$imagesString = '';
+$imagesArray = array();
+date_default_timezone_set('Europe/Zurich');
+$postDateTime = date("d.m.Y H:i:s", time());
+$errors = array();
 
 ?>
 
@@ -32,10 +38,11 @@ $stmt->fetchAll()
 </header>
 <aside class = "aside">
 <a href = "anmeldung.php">Beitrag schreiben</a>
+<a href = "andereblogs.php">andere Blogs</a>
     </aside>
     <main class = "aside">
     <h2>Blogger</h2>
-    <p>Name</p>
+    <p>Benutzername:</p>
     <p>Erstelldatum: </p>
     <p>Beitrag: </p>
     </main>
