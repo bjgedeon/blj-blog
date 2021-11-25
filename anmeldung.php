@@ -1,5 +1,5 @@
 <?php
-$user = 'root'; 
+/*$user = 'root'; 
 $password = '';
 $database = 'blog';
 
@@ -61,8 +61,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <a href = "index.php">Blog</a>
 <a href = "andereblogs.php">andere Blogs</a>
 </aside>
-<form>
-<main class = "aside">
+<form class = "formular">
+
 
      Benutzername: <input class = "formular" type = "text" name = "name"> <br>
      Titel: <input class = "formular" type = "text" name = "name">
@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <textarea class = "block" name = "beitrag" rows = "5" cols = "40" placeholder="Schreiben Sie ihren Beitrag"></textarea> 
     <input type = "submit">
 
-</main>
+
 </form>
 
 <?php
@@ -87,4 +87,4 @@ foreach($blogs as $blog)  { ?>
 ?>
 
 </body>
-</html>
+</html>*/

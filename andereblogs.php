@@ -23,7 +23,6 @@ $pdo2 = new PDO('mysql:host=mysql2.webland.ch;dbname=d041e_dagomez', '54321_Db!!
 </header>
 <aside class = "aside">
 <a href = "index.php">Blog</a>
-<a href = "anmeldung.php">Beitrag schreiben</a>
 </aside>
 </body>
 </html>

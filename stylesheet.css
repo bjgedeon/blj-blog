@@ -19,6 +19,7 @@
     grid-template: 
     "header"
     "aside"
+    "form"
     "main"
     "div";
 }
