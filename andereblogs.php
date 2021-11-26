@@ -1,8 +1,12 @@
 <?php 
-$pdo2 = new PDO('mysql:host=mysql2.webland.ch;dbname=d041e_dagomez', '54321_Db!!!', [
+$pdo2 = new PDO('mysql:host=mysql2.webland.ch;dbname=d041e_dagomez', 'd041e_dagomez', '54321_Db!!!', [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
     PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
-])
+]);
+
+$stmt = $pdo2->query('SELECT `url`, `description` FROM `urls`');
+$urls = $stmt->fetchALL(); 
+array_multisort(array_column($urls, 'description'), SORT_ASC, $urls)
 ?>
 
 <!DOCTYPE html>
@@ -17,12 +21,25 @@ $pdo2 = new PDO('mysql:host=mysql2.webland.ch;dbname=d041e_dagomez', '54321_Db!!
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
     <title>andere Blogs</title>
 </head>
-<body>
-    <header>
+<body class = "grid">
+    <header class = "header">
     <h1 class = "title">Andere Blogs</h1>
 </header>
 <aside class = "aside">
 <a href = "index.php">Blog</a>
 </aside>
+<main class = "aside">
+
+    <ul>
+        <?php
+        foreach ($urls as $url) { ?>
+        
+<li> <a href=<?=$url['url']?>><?=$url['description']?></a></li>
+<?php } ?>
+
+        </ul>
+
+    
+</main>
 </body>
 </html>

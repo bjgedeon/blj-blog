@@ -19,20 +19,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $errors[] = 'Geben Sie bitte einen Benutzernamen ein';
     }
-    if (!empty($_POST['post-text'])) {
-        $postText = $_POST['post-text'];
-    } else {
-        $errors[] = 'Geben Sie bitte einen Text ein';
-    }
     if (!empty($_POST['post-title'])) {
         $postTitle = $_POST['post-title'];
     } else {
         $errors[] = 'Geben Sie bitte einen Titel ein';
     }
-
+    if (!empty($_POST['post-text'])) {
+        $postText = $_POST['post-text'];
+    } else {
+        $errors[] = 'Geben Sie bitte einen Text ein';
+    }
+    if (!empty($_POST['post-image'])) {
+        $postImage = $_POST['post-image'];
+    }
+ 
     if (empty($errors)) {
-        $stmt = $pdo->prepare("INSERT INTO `posts` (created_by, created_at, post_title, post_text) VALUES (:username, now(), :postTitle, :postText)");
-        $stmt -> execute([':username' => $username, ':postTitle' => $postTitle, ':postText' => $postText]);
+        $stmt = $pdo->prepare("INSERT INTO `posts` (created_by, created_at, post_title, post_text, post_image) VALUES (:username, now(), :postTitle, :postText, :postImage)");
+        $stmt -> execute([':username' => $username, ':postTitle' => $postTitle, ':postText' => $postText, ':postImage' => $postImage]);
     }
 }
 
@@ -55,36 +58,43 @@ $blogs = $stmt->fetchALL();
     <title>Blog</title>
 </head>
 <body class = "grid">
-<header>
-    <h1 class = "title">Blog</h1>
+<header class = "header">
+    <h1 class = "title">Björn's Blog</h1>
 </header>
+<aside class = "aside">
+    <a href = "home.php">Home</a>
+<a href = "andereblogs.php">andere Blogs</a>
+    </aside>
+    <?php if (count($errors) > 0) { ?>
+            <div class="error">
+                <ul>
+                    <?php foreach ($errors as $error) { ?>
+                        <li><?= $error ?></li>
+                    <?php } ?>
+                </ul>
+            </div>
+        <?php } ?>
 <form class = "aside" method="post" action="index.php">
-
-
      Benutzername: <input class = "formular" type = "text" name = "username"> <br>
-     Titel: <input class = "formular" type = "text" name = "post-title">
+     Titel: <input class = "formular" type = "text" name = "post-title"> <br>
      Bild: <input class = "formular" type = "text" name = "image-url" placeholder="URL des Bildes">
     <textarea class = "block" name = "post-text" rows = "5" cols = "40" placeholder="Schreiben Sie ihren Beitrag"></textarea> 
     <input type = "submit">
-
-
 </form>
-<aside class = "aside">
-<a href = "andereblogs.php">andere Blogs</a>
-    </aside>
+
     <?php
 foreach($blogs as $blog)  { ?>
 
 <div class = "aside">
-<h2>Blogger</h2>
-<p>Benutzername:</p>
-    <h2><?= htmlspecialchars($blog['created_by'])?></h2>
-    <p>Erstelldatum:</p>
+<h2 class = "beitragteil">Benutzername:</h2>
+    <p><?= htmlspecialchars($blog['created_by'])?></p>
+    <h2 class = "beitragteil">Erstelldatum:</h2>
     <p><?= htmlspecialchars($blog['created_at'])?></p>
-    <p>Titel:</p>
-    <h2><?= htmlspecialchars($blog['post_title'])?></h2>
-    <p>Beitrag:</p>
+    <h2 class = "beitragteil">Titel:</h2>
+    <p><?= htmlspecialchars($blog['post_title'])?></p>
+    <h2 class = "beitragteil">Beitrag:</h2>
     <p><?= htmlspecialchars($blog['post_text'])?></p>
+    <img src = <?= htmlspecialchars($blog['post_image'])?> widht="200", height="250">
 </div>
 <?php
 }
