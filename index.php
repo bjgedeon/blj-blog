@@ -59,11 +59,14 @@ $blogs = $stmt->fetchALL();
 </head>
 <body class = "grid">
 <header class = "header">
-    <h1 class = "title">Björn's Blog</h1>
+    <h1 class = "title">Blog</h1>
 </header>
-<aside class = "aside">
-    <a href = "home.php">Home</a>
-<a href = "andereblogs.php">andere Blogs</a>
+<aside class = "asidemain">
+
+<a class = "links2" href = "home.php">Home</a> 
+    <a class = "links2" href = "index.php">Blog</a>
+<a class = "links2" href = "andereblogs.php">andere Blogs</a>
+
     </aside>
     <?php if (count($errors) > 0) { ?>
             <div class="error">
@@ -74,12 +77,12 @@ $blogs = $stmt->fetchALL();
                 </ul>
             </div>
         <?php } ?>
-<form class = "aside" method="post" action="index.php">
+<form class = "asideformular" method="post" action="index.php">
      Benutzername: <input class = "formular" type = "text" name = "username"> <br>
      Titel: <input class = "formular" type = "text" name = "post-title"> <br>
      Bild: <input class = "formular" type = "text" name = "image-url" placeholder="URL des Bildes">
     <textarea class = "block" name = "post-text" rows = "5" cols = "40" placeholder="Schreiben Sie ihren Beitrag"></textarea> 
-    <input type = "submit">
+    <input class = "bottom" type = "submit">
 </form>
 
     <?php
@@ -94,7 +97,10 @@ foreach($blogs as $blog)  { ?>
     <p><?= htmlspecialchars($blog['post_title'])?></p>
     <h2 class = "beitragteil">Beitrag:</h2>
     <p><?= htmlspecialchars($blog['post_text'])?></p>
-    <img src = <?= htmlspecialchars($blog['post_image'])?> widht="200", height="250">
+
+    <?php if (!empty($_POST['post-text'])) { ?>
+    <img src = <?= htmlspecialchars($blog['post_image'])?> widht="200", height="250"> <?php }
+    ?>
 </div>
 <?php
 }

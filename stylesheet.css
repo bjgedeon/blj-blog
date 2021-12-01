@@ -3,6 +3,7 @@
     font-family: 'Outfit', sans-serif;
     font-size: 50px;
     color: #ece8e8;
+    padding: 20px;
 }
 
 .aside {
@@ -10,6 +11,31 @@
     background: #ece8e8;
     border-top: black solid 2px;
     font-family: 'Outfit', sans-serif;
+   
+}
+
+.asidemain {
+   padding: 10px;
+    background: #ece8e8;
+    border-bottom: black solid 2px;
+    font-family: 'Outfit', sans-serif;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-bottom: 40px;
+   
+}
+
+.asideformular {
+    display: grid;
+    padding: 10px;
+    background: #ece8e8;
+    border-top: black solid 2px;
+    font-family: 'Outfit', sans-serif;
+    border-radius: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 40px;
+    justify-content: center;
 }
 
 .grid {
@@ -42,21 +68,22 @@
          text-decoration: none;
          font-family: 'Outfit', sans-serif;
          color: black;
-  
-         
      }
 
      a:hover {
-         color: rgb(82, 82, 235);
+         color: lightsteelblue;
      }
 
      .formular {
+         display: flex;
          margin-top: 20px;
          padding: 5px;
          background: whitesmoke;
          border-top: black solid 2px;
          font-family: 'Outfit', sans-serif;
          display: block;
+         justify-content: center;
+        
      }
 
      .error {
@@ -101,4 +128,59 @@
     color: #ece8e8;
     padding-top: 40px;
     margin-left: 200px;
+}
+
+.links {
+    display: flex;
+    padding: 20px;
+    margin: 40px;
+    border: black solid 2px;
+    border-radius: 50px;
+    background: rgb(82, 82, 235);
+    justify-content: center;
+}
+
+.asidehome {
+    margin-left: 720px;
+    margin-right: 720px;
+    background: #ece8e8;
+    padding: 20px;
+    border: whitesmoke solid 2px;
+    border-radius: 25px;
+}
+
+.bodyhome {
+    background: whitesmoke;
+}
+
+.links2 {
+    display: flex;
+    width: 100px;
+    padding: 10px;
+   margin: 20px;
+    border: black solid 2px;
+    border-radius: 50px;
+    background: rgb(82, 82, 235);
+    justify-content: center;
+ 
+}
+
+.liste {
+    list-style: none;
+}
+
+.links3 {
+    display: flex;
+    width: 150px;
+    padding: 10px;
+    margin: 20px;
+    border: black solid 2px;
+    border-radius: 50px;
+    background: whitesmoke;
+    justify-content: center;
+}
+
+.bottom {
+    background: rgb(82, 82, 235);
+    color: whitesmoke;
 }

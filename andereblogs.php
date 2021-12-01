@@ -25,16 +25,19 @@ array_multisort(array_column($urls, 'description'), SORT_ASC, $urls)
     <header class = "header">
     <h1 class = "title">Andere Blogs</h1>
 </header>
-<aside class = "aside">
-<a href = "index.php">Blog</a>
+<aside class = "asidemain">
+<a class = "links2" href = "home.php">Home</a> 
+   <a class = "links2" href = "index.php">Blog</a> 
+ <a class = "links2" href = "andereblogs.php">andere Blogs</a> 
+
 </aside>
 <main class = "aside">
 
-    <ul>
+    <ul class = "liste">
         <?php
         foreach ($urls as $url) { ?>
         
-<li> <a href=<?=$url['url']?>><?=$url['description']?></a></li>
+<li> <a class = "links3" href=<?=$url['url']?>><?=$url['description']?></a></li>
 <?php } ?>
 
         </ul>

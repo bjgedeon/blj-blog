@@ -10,10 +10,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet"><title>Home</title>
 </head>
-<body>
+<body class = "bodyhome">
     <header class = "hintergrund">
     <h2 class = "titel">Willkommen auf</h2>
     <h1 class = "home">Björn's Blog</h1>
 </header>
+<aside class = "asidehome">
+    <a class = "links" href = "index.php">Blog</a>
+<a class = "links" href = "andereblogs.php">andere Blogs</a>
+</aside>
 </body>
 </html>
