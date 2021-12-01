@@ -31,7 +31,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     if (!empty($_POST['post-image'])) {
         $postImage = $_POST['post-image'];
+    } else {
+        $postImage = '';
     }
+
+    /*echo $postImage;*/
  
     if (empty($errors)) {
         $stmt = $pdo->prepare("INSERT INTO `posts` (created_by, created_at, post_title, post_text, post_image) VALUES (:username, now(), :postTitle, :postText, :postImage)");
@@ -78,17 +82,17 @@ $blogs = $stmt->fetchALL();
             </div>
         <?php } ?>
 <form class = "asideformular" method="post" action="index.php">
-     Benutzername: <input class = "formular" type = "text" name = "username"> <br>
-     Titel: <input class = "formular" type = "text" name = "post-title"> <br>
-     Bild: <input class = "formular" type = "text" name = "image-url" placeholder="URL des Bildes">
-    <textarea class = "block" name = "post-text" rows = "5" cols = "40" placeholder="Schreiben Sie ihren Beitrag"></textarea> 
+     Benutzername: <input class = "formular" type = "text" name = "username"> 
+     Titel: <input class = "formular" type = "text" name = "post-title"> 
+     Bild: <input class = "formular" type = "text" name = "post-image" placeholder="URL des Bildes">
+    Beitrag: <textarea class = "block" name = "post-text" rows = "5" cols = "40" placeholder="Schreiben Sie ihren Beitrag"></textarea> 
     <input class = "bottom" type = "submit">
 </form>
 
     <?php
 foreach($blogs as $blog)  { ?>
 
-<div class = "aside">
+<div class = "asidebeitrag">
 <h2 class = "beitragteil">Benutzername:</h2>
     <p><?= htmlspecialchars($blog['created_by'])?></p>
     <h2 class = "beitragteil">Erstelldatum:</h2>
@@ -98,8 +102,8 @@ foreach($blogs as $blog)  { ?>
     <h2 class = "beitragteil">Beitrag:</h2>
     <p><?= htmlspecialchars($blog['post_text'])?></p>
 
-    <?php if (!empty($_POST['post-text'])) { ?>
-    <img src = <?= htmlspecialchars($blog['post_image'])?> widht="200", height="250"> <?php }
+    <?php if (strlen($blog['post_image'] > 4)) { ?>
+        <img class = "image" src = <?= htmlspecialchars($blog['post_image'])?> widht="150", height="175"> <?php }
     ?>
 </div>
 <?php
