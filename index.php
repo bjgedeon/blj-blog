@@ -82,10 +82,11 @@ $blogs = $stmt->fetchALL();
             </div>
         <?php } ?>
 <form class = "asideformular" method="post" action="index.php">
+    <h2>Schreibe deinen Beitrag</h2>
      Benutzername: <input class = "formular" type = "text" name = "username"> 
      Titel: <input class = "formular" type = "text" name = "post-title"> 
      Bild: <input class = "formular" type = "text" name = "post-image" placeholder="URL des Bildes">
-    Beitrag: <textarea class = "block" name = "post-text" rows = "5" cols = "40" placeholder="Schreiben Sie ihren Beitrag"></textarea> 
+    Text: <textarea class = "block" name = "post-text" rows = "5" cols = "40" placeholder="Schreibe deinen Text"></textarea> 
     <input class = "bottom" type = "submit">
 </form>
 

@@ -26,8 +26,8 @@ array_multisort(array_column($urls, 'description'), SORT_ASC, $urls)
     <h1 class = "title">Andere Blogs</h1>
 </header>
 <aside class = "asidemain">
-<a class = "links2" href = "home.php">Home</a> 
-   <a class = "links2" href = "index.php">Blog</a> 
+ <a class = "links2" href = "home.php">Home</a> 
+ <a class = "links2" href = "index.php">Blog</a> 
  <a class = "links2" href = "andereblogs.php">andere Blogs</a> 
 
 </aside>
