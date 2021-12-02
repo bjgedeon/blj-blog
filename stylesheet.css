@@ -168,6 +168,7 @@
     font-size: 100px;
     color: #ece8e8;
     padding-bottom: 40px;
+    padding-left: 20px;
 }
 
 .hintergrund {
@@ -180,7 +181,8 @@
     font-size: 50px;
     color: #ece8e8;
     padding-top: 40px;
-    margin-left: 200px;
+    padding-left: 20px;
+    
 }
 
 .links {
@@ -275,4 +277,43 @@
 .formularschrift {
     margin-left: 60px;
     margin-right: 60px;
+}
+
+@media only screen and (max-width: 200px) {
+    .andereblogs {
+        float: left;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+}
+@media only screen and (max-width: 1700px) {
+    .andereblogs {
+        float: left;
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    .andereblogs {
+        float: left;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-top: 20px;
+        margin-bottom: 25px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .andereblogs {
+        float: left;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
 }
