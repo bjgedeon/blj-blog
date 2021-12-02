@@ -1,5 +1,5 @@
 .title {
-    background: rgb(82, 82, 235);
+    background: rgb(33, 33, 119);
     font-family: 'Outfit', sans-serif;
     font-size: 70px;
     color: #ece8e8;
@@ -13,9 +13,11 @@
     font-family: 'Outfit', sans-serif;
    border-top-left-radius: 20px;
    border-top-right-radius: 20px;
+    opacity: 0.9;
 }
 
 .asidemain {
+    display: flex;
    padding: 10px;
     background: #ece8e8;
     border-bottom: black solid 2px;
@@ -23,8 +25,10 @@
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
     margin-bottom: 40px;
-    padding-left: 94px;
-    padding-right: 94px;
+    padding-left: auto;
+    padding-right: auto;
+    opacity: 0.9;
+    justify-content: space-around;
 }
 
 .asidebeitrag {
@@ -35,9 +39,26 @@
     border-radius: 20px;
     font-family: 'Outfit', sans-serif;
     margin-bottom: 40px;
+    opacity: 0.9;
 }
 
 .asideformular {
+    display: grid;
+    padding: 10px;
+    background: #ece8e8;
+    border-top: black solid 2px;
+    border-bottom: black solid 2px;
+    font-family: 'Outfit', sans-serif;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    margin-top: 5px;
+    justify-content: center;
+    opacity: 0.9;
+}
+
+.formularteil {
     display: grid;
     padding: 10px;
     background: #ece8e8;
@@ -62,6 +83,7 @@
     "form"
     "main"
     "div";
+    background-image: url(pictures/polar-lights.jpg);
 }
 
  .beitrag {
@@ -74,6 +96,8 @@
      display: block;
      margin-bottom: 20px;
      margin-top: 5px;
+     margin-right: 60px;
+     margin-left: 60px;
      font-family: 'Outfit', sans-serif;
      background: whitesmoke;
      }
@@ -98,6 +122,8 @@
          display: flex;
          margin-bottom: 20px;
          margin-top: 5px;
+         margin-left: 60px;
+         margin-right: 60px;
          padding: 5px;
          background: whitesmoke;
          border-top: black solid 2px;
@@ -118,10 +144,11 @@
             justify-content: left;
             padding-top: 20px;   
             color: darkred;
+            opacity: 0.8;
      }
 
      .header {
-         background: rgb(82, 82, 235);
+         background: rgb(33, 33, 119);
          color: black;
      }
 
@@ -136,7 +163,7 @@
      .home {
          display: flex;
          justify-content: center;
-         background: rgb(82, 82, 235);
+         background: rgb(33, 33, 119);
     font-family: 'Outfit', sans-serif;
     font-size: 100px;
     color: #ece8e8;
@@ -144,11 +171,11 @@
 }
 
 .hintergrund {
-    background: rgb(82, 82, 235);
+    background: rgb(33, 33, 119);
 }
      
 .titel {
-    background: rgb(82, 82, 235);
+    background: rgb(33, 33, 119);
     font-family: 'Outfit', sans-serif;
     font-size: 50px;
     color: #ece8e8;
@@ -162,19 +189,22 @@
     margin: 40px;
     border: black solid 2px;
     border-radius: 50px;
-    background: rgb(82, 82, 235);
+    background: rgb(33, 33, 119);
     justify-content: center;
+    color: whitesmoke;
+    font-size: 20px;
 }
 
 .asidehome {
     margin-top: 150px;
     margin-bottom: 250px;
-    margin-left: 720px;
-    margin-right: 720px;
+    margin-left: auto;
+    margin-right: auto;
     background: #ece8e8;
     padding: 20px;
     border: whitesmoke solid 2px;
     border-radius: 25px;
+    width: 300px;
 }
 
 .bodyhome {
@@ -187,13 +217,14 @@
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: auto;
+    margin-right: auto;
     border: black solid 2px;
     border-radius: 50px;
-    background: rgb(82, 82, 235);
+    background: rgb(33, 33, 119);
     justify-content: center;
     float: left;
+    color: whitesmoke;
 }
 
 .liste {
@@ -217,15 +248,15 @@
 
 .bottom {
     display: flex;
-    background: rgb(82, 82, 235);
+    background: rgb(33, 33, 119);
     color: whitesmoke;
     margin-top: 20px;
     border: black solid 2px;
     border-radius: 100px;
     width: 100px;
     justify-content: center;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 20px;
 }
 
@@ -241,3 +272,7 @@
     margin-bottom: 50px;
 }
 
+.formularschrift {
+    margin-left: 60px;
+    margin-right: 60px;
+}
