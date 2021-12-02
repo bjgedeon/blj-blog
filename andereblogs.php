@@ -37,7 +37,7 @@ array_multisort(array_column($urls, 'description'), SORT_ASC, $urls)
         <?php
         foreach ($urls as $url) { ?>
         
-<li> <a class = "links3" href=<?=$url['url']?>><?=$url['description']?></a></li>
+<li class = "andereblogs"> <a class = "links3" href=<?=$url['url']?>><?=$url['description']?></a></li>
 <?php } ?>
 
         </ul>

@@ -34,7 +34,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $postImage = '';
     }
-
+    if (!empty($_POST['post-comment'])) {
+        $postComment = $_POST['post-comment'];
+    } else {
+        $postComment = '';
+    }
     /*echo $postImage;*/
  
     if (empty($errors)) {
@@ -67,18 +71,17 @@ $blogs = $stmt->fetchALL();
 </header>
 <aside class = "asidemain">
 
-<a class = "links2" href = "home.php">Home</a> 
+<a class = "links2" href = "home.php">Home</a>
     <a class = "links2" href = "index.php">Blog</a>
 <a class = "links2" href = "andereblogs.php">andere Blogs</a>
 
     </aside>
     <?php if (count($errors) > 0) { ?>
-            <div class="error">
-                <ul>
+            <div class = "error"> <ul>
                     <?php foreach ($errors as $error) { ?>
-                        <li><?= $error ?></li>
-                    <?php } ?>
-                </ul>
+                    <li> <?= $error ?> </li> <br>
+                    <?php } ?>        
+                    </ul>  
             </div>
         <?php } ?>
 <form class = "asideformular" method="post" action="index.php">
